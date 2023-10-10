@@ -1,0 +1,77 @@
+.week{
+  position: relative;
+  background-color: transparent;
+  border: none;
+  font-family: Arial;
+  font: optional;
+}
+.week>.calendar-day{
+  position: absolute;
+  inset-inline: auto;
+  top:0;
+}
+@media (min-width:861px) {
+  .week:not(.week:focus-within)>.calendar-day:nth-child(1){
+    z-index: 7;
+  }
+  .week:not(.week:focus-within)>.calendar-day:nth-child(2){
+    z-index: 6;
+    transform: translate(5px,5px);
+}
+.week:not(.week:focus-within)>.calendar-day:nth-child(3){
+  z-index: 5;
+  transform: translate(10px,10px);
+}
+.week:not(.week:focus-within)>.calendar-day:nth-child(4){
+  z-index: 4;
+  transform: translate(15px,15px);
+}
+.week:not(.week:focus-within)>.calendar-day:nth-child(5){
+  z-index: 3;
+  transform: translate(20px,20px);
+}
+.week:not(.week:focus-within)>.calendar-day:nth-child(6){
+  z-index: 2;
+  transform: translate(25px,25px);
+}
+.week:not(.week:focus-within)>.calendar-day:nth-child(7){
+  transform: translate(30px,30px);
+}
+.week:focus-within>.calendar-day{
+  position: relative;
+  width: clamp(200px 20vw);
+}
+
+}
+.week:focus-within>.calendar-day:hover{
+  scale: 1.1;
+  z-index: 200;
+}
+.week:focus-within{
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  width: fit-content;
+}
+.calendar-day{
+  min-width: 150px;
+  min-height: 240px;
+  width: 15vw;
+  aspect-ratio: 4/5;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  border-radius: 5vh;
+  box-shadow: 0px 0px 2px rgba(0,0,0,0.6);
+  overflow: hidden;
+  background:linear-gradient(rgb(255,255,255),rgb(255, 226, 163));
+  transition: all .2s;
+  
+}
+.calendar-day > *{
+  height: 1fr;
+  text-align: center;
+}

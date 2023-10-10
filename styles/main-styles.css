@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+  background: linear-gradient(#6bffb24c, #fff97d62);
+}
+
+.current-day-container {
+  margin: 2rem;
+  width: 250vw;
+  height: calc(100vh - 4rem);
+}
+
+.choosing-buttons {
+  display: grid;
+  grid-template-rows: 70% 30%;
+  margin: 4rem 2rem 2rem 0;
+  height: 1fr;
+}
+
+.week-plan-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  width: 25vw;
+  aspect-ratio: 3/4;
+}
+
+.history-container {
+  margin: 20px;
+  width: 1fr;
+  height: 1fr;
+  background-color: blueviolet;
+}
+
+.settings-button {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgb(35, 201, 146);
+  border: none;
+}
+
+.week {
+  width: 90%;
+  height: 90%;
+  background-color: brown;
+}
+
+@media (max-width: 860px) {
+  body {
+    display: grid;
+    justify-content: center;
+  }
+
+  .current-day-container {
+    max-width: 800px;
+  }
+
+  .choosing-buttons {
+    max-width: 60vw;
+    margin-inline: auto;
+    margin-top: 0;
+  }
+
+  .week-plan-container {
+    min-width: 400px;
+  }
+
+  .calendar-day {
+    position: relative;
+  }
+  .week:not(.week:focus-within)>*{
+    position: relative;
+    width: clamp(200px 20vw);
+    transform: translateY(-10px);
+  }
+  .week {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    width: fit-content;
+    pointer-events: none;
+  }
+}
